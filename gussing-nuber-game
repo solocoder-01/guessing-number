@@ -1,0 +1,164 @@
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+int main(){
+
+/*                                      // important formula 
+        srand(time(0));                 // random = offset + rand() % range + 1;
+        int random = 1 + rand() % 100 + 1; // difine a range for random number
+        cout<<random;
+*/
+        srand(time(0));                 
+        int random = 1 + rand() % 100 + 1; 
+        int levelChoice ;
+        int userInput;
+
+        while (true)
+        {
+            cout<<"\n\t\t******* HI THIS IS FINDING SECRET NUMBER GAME ****** \n\n";
+            cout<<"\t\t\t *** GUESS NUMBER BETWEEN 1-100 *** \n\n";
+            cout<<"THERE IS THREE LEVEL CHOOSE ANY ONE \n\n";
+            cout<<"1. FOR EASY\t\t 2. FOR MEDIUM \t\t 3. FOR HARD \t\t 4. EXIT\n\n";
+            cout<<"Enter Difficulty Level:";
+            cin>>levelChoice;
+
+            if (levelChoice == 1)
+            {
+                cout<<"\nYou Have 10 Choices For Guessing The Secret Number"<<endl;
+                
+                int choices = 10;
+
+                for (int i = 1; i <= 10; i++)
+                {
+                    cout<<"\nGuess The Number:";
+                    cin>>userInput;
+                    choices--;
+
+                    
+                        if (random == userInput)
+                        {
+                            cout<<"\n\nExcellent You Win\n\n";
+                             cout<<"Secret Number Is Matched Secret Number Is:"<<random;
+                            cout<<"\n\nNow You Can Go For Next Level\n\n\n";
+                            break;
+                        }
+                        else 
+                        {
+                            if (userInput > random)
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                                cout<<"\nSecret Number Is Smaller Than:"<<userInput<<endl;
+                                cout<<"\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                            else
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                               cout<<"\nSecret Number Is Greater Than: "<<userInput<<endl;
+                               cout<<"\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                        }
+                }
+                
+
+            }
+            else if (levelChoice == 2)
+            {
+                 cout<<"\nYou Have 7 Choices For Guessing The Secret Number"<<endl;
+                
+                int choices = 7;
+
+                for (int i = 1; i <= 7; i++)
+                {
+                    cout<<"\nGuess The Number:";
+                    cin>>userInput;
+                    choices--;
+
+                    
+                        if (random == userInput)
+                        {
+                            cout<<"\n\nExcellent You Win\n\n";
+                            cout<<"Secret Number Is Matched Secret Number Is:"<<random;
+                            cout<<"\n\nNow You Can Go For Next Level\n\n\n";
+                            break;
+                        }
+                        else 
+                        {
+                            if (userInput > random)
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                                cout<<"\nSecret Number Is Smaller Than: "<<userInput<<endl;
+                               cout<<"\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                            else
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                               cout<<"\nSecret Number Is Greater Than: "<<userInput<<endl;
+                               cout<<"\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                        }
+                }
+                
+
+
+            }
+            else if(levelChoice == 3)
+            {
+                     cout<<"\nYou Have 5 Choices For Guessing The Secret Number"<<endl;
+                
+                int choices = 5;
+
+                for (int i = 1; i <= 5; i++)
+                {
+                    cout<<"\nGuess The Number:";
+                    cin>>userInput;
+                    choices--;
+
+                    
+                        if (random == userInput)
+                        {
+                            cout<<"\n\nHey You Are Excellent Guy You Won Difficult Level\n\n";
+                             cout<<"Secret Number Is Matched Secret Number Is:"<<random;
+                            cout<<"\nNow You Can Go For Next Level\n\n\n";
+                            break;
+                        }
+                        else 
+                        {
+                            if (userInput > random)
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                                cout<<"\nSecret Number Is Smaller Than: "<<userInput<<endl;
+                               cout<<"\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                            else
+                            {
+                                cout<<"\nSecret Number Does Not Match\n";
+                               cout<<"\nSecret Number Is Greater Than:  "<<userInput<<endl;
+                               cout<<"\n\nYou Have Left Choices: "<<choices<<endl;
+                            }
+                        }
+                }
+                
+
+
+
+            }
+            else if(levelChoice == 4)
+            {
+                exit(0);
+            }
+            else{
+                    cout<<"Please Enter Correct Input";
+                    break;
+            }
+            
+            
+        }
+
+
+
+
+
+
+    return 0;
+}
